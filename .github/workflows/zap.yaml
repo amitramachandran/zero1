@@ -21,7 +21,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: 'ghcr.io/zaproxy/zaproxy:stable'
-          format: sarif
+          format: '/tmp/zap.sarif'
           target: 'https://www.zaproxy.org/'
-          rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
+
+      - name: Read file contents
+        run: cat /tmp/zap.sarif
