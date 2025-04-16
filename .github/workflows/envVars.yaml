@@ -1,8 +1,7 @@
 name: Show GitHub Environment Variables
 
 on:
-  workflow_dispatch:  # Allows manual triggering
-
+  push:  
 jobs:
   show-env:
     runs-on: ubuntu-latest
