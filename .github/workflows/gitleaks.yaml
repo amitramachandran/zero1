@@ -1,0 +1,26 @@
+name: Gitleaks scan
+
+on:
+  push:
+    branches:
+    - workflow_testing
+
+jobs:
+  gitleaks-codescan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+
+      - name: Gitleaks scan
+        uses: cloudbees-io/gitleaks-github-test@v1
+        with:
+          cloudbees_pat_token: ${{ secrets.CLOUDBEES_PAT }}
+          is-github-workflow: true
+          cloudbees_api_url: ${{ vars.CB_API_URL }}
+          run_id: $GITHUB_RUN_ID
+          job_id: $JOB_ID
+          step_id: $STEP_ID
+          
+
+  
