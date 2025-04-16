@@ -22,3 +22,16 @@ jobs:
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
           echo "GITHUB_HEAD_REF: $GITHUB_HEAD_REF"
           echo "GITHUB_BASE_REF: $GITHUB_BASE_REF"
+
+      - name: Show event JSON path
+        run: |
+          echo "Event file path: $GITHUB_EVENT_PATH"
+
+      - name: Check if event JSON exists
+        run: |
+          if [ -f "$GITHUB_EVENT_PATH" ]; then
+            echo "✅ Event JSON file exists."
+            cat "$GITHUB_EVENT_PATH"
+          else
+            echo "❌ Event JSON file does not exist."
+          fi
