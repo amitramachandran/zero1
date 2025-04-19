@@ -1,7 +1,9 @@
 name: Show GitHub Environment Variables
 
 on:
-  push:  
+  push:
+  workflow_dispatch: 
+  
 jobs:
   show-env:
     runs-on: ubuntu-latest
