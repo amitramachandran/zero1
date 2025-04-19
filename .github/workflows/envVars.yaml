@@ -1,7 +1,6 @@
 name: Show GitHub Environment Variables
 
 on:
-  push:
   workflow_dispatch: 
   
 jobs:
