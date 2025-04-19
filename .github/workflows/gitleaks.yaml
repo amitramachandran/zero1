@@ -19,7 +19,7 @@ jobs:
         run: echo "Ref name is $GITHUB_SERVER_URL"
 
       - name: Gitleaks scan
-        uses: cloudbees-io/gitleaks-github-test@v2
+        uses: cloudbees-io/gitleaks-github-test@v1
         with:
           cloudbees_pat_token: ${{ secrets.CLOUDBEES_PAT }}
           is-github-workflow: true
