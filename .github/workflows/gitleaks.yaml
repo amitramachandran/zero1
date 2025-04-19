@@ -12,6 +12,9 @@ jobs:
       - name: Checkout repository code
         uses: actions/checkout@v3
 
+      - name: Print GITHUB_REF_NAME
+        run: echo "Ref name is $GITHUB_REF_NAME"
+
       - name: Gitleaks scan
         uses: cloudbees-io/gitleaks-github-test@v2
         with:
