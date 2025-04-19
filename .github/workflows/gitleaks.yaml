@@ -15,6 +15,9 @@ jobs:
       - name: Print GITHUB_REF_NAME
         run: echo "Ref name is $GITHUB_REF_NAME"
 
+      - name: Print GITHUB_SERVER_URL
+        run: echo "Ref name is $GITHUB_SERVER_URL"
+
       - name: Gitleaks scan
         uses: cloudbees-io/gitleaks-github-test@v2
         with:
