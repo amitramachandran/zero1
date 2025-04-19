@@ -5,7 +5,7 @@ apiVersion: automation.cloudbees.io/v1alpha1
 on:
   push:
     branches:
-    - workflow_testing
+    - workflow_testings
 
 jobs:
   gitleaks-gha-codescan-cbp:
