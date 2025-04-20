@@ -23,7 +23,7 @@ jobs:
           cloudbees_api_url: ${{ vars.CB_API_URL }}
           run_id: $GITHUB_RUN_ID
           job_id: $JOB_ID
-          step_id: $STEP_ID
+          step_id: $STEP_ID 
           
 
   
