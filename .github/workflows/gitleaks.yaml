@@ -15,6 +15,13 @@ jobs:
       - name: Print GITHUB_RUN_ID
         run: echo "Ref name is $GITHUB_RUN_ID"
 
+      - name: Create empty JSON file in workspace
+        run: |
+          FILE_PATH="$GITHUB_WORKSPACE/store/request/request.json"
+          mkdir -p "$(dirname "$FILE_PATH")"
+          touch "$FILE_PATH"
+          echo "File created at: $FILE_PATH"
+
       - name: Gitleaks scan
         uses: cloudbees-io/gitleaks-github-test@v2
         with:
