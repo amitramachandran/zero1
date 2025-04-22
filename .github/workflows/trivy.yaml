@@ -1,0 +1,23 @@
+name: Trivy Hybrid Scan
+
+on:
+  push:
+    branches:
+      - workflow_testingg
+
+jobs:
+  trivy-hybrid-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Create tar of source code
+        run: |
+          tar -cvf output.tar .
+
+      - name: Run Trivy scan
+        uses: cloudbees-io/trivy-plugin-private@action
+        with:
+          binary-tar-path: output.tar
