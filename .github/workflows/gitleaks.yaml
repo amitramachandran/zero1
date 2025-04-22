@@ -47,8 +47,8 @@ jobs:
           job_id: $JOB_ID
           step_id: $STEP_ID 
 
-      - name: check output.json
-        run : |
-          FILE_PATH="$GITHUB_WORKSPACE/store/0ef89b16-b3a6-4c2d-aeef-a3d30f20e872/output/output.json"
-          jq . $FILE_PATH
-          cat $FILE_PATH
+      # - name: check output.json
+      #   run : |
+      #     FILE_PATH="$GITHUB_WORKSPACE/store/0ef89b16-b3a6-4c2d-aeef-a3d30f20e872/output/output.json"
+      #     jq . $FILE_PATH
+      #     cat $FILE_PATH
