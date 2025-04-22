@@ -3,7 +3,7 @@ name: Trivy Hybrid Scan
 on:
   push:
     branches:
-      - workflow_testingg
+      - workflow_testing
 
 jobs:
   trivy-hybrid-scan:
@@ -29,6 +29,6 @@ jobs:
           tar -tf output.tar
 
       - name: Run Trivy scan
-        uses: cloudbees-io/trivy-plugin-private@action
+        uses: cloudbees-io/trivy-github-test@v1
         with:
           binary-tar-path: output.tar
