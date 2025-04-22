@@ -32,3 +32,9 @@ jobs:
         uses: cloudbees-io/trivy-github-test@v1
         with:
           binary-tar-path: output.tar
+          cloudbees_pat_token: ${{ secrets.CLOUDBEES_HD_PAT }}
+          is-github-workflow: true
+          cloudbees_api_url: ${{ vars.CB_PREPROD_API_URL }}
+          run_id: "14377182881"
+          job_id: $JOB_ID
+          step_id: $STEP_ID 
