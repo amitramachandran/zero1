@@ -3,7 +3,7 @@ name: Gitleaks scan
 on:
   push:
     branches:
-    - workflow_testingg
+    - workflow_testing
   workflow_dispatch:
 
 jobs:
