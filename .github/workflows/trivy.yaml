@@ -13,9 +13,20 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
+      - name: Print GITHUB_RUN_ID
+        run: echo "Ref name is $GITHUB_RUN_ID"
+
+      - name: Create empty JSON file in workspace
+        run: |
+          FILE_PATH="$GITHUB_WORKSPACE/store/request/request.json"
+          mkdir -p "$(dirname "$FILE_PATH")"
+          touch "$FILE_PATH"
+          echo "File created at: $FILE_PATH"
+
       - name: Create tar of source code
         run: |
           tar -cvf output.tar .
+          tar -tf output.tar
 
       - name: Run Trivy scan
         uses: cloudbees-io/trivy-plugin-private@action
