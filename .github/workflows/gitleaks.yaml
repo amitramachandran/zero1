@@ -50,4 +50,4 @@ jobs:
       - name: check files
         run : |
           FILE_PATH="$GITHUB_WORKSPACE/store"
-          ls -la $FILE_PATH
+          ls -laR $FILE_PATH
