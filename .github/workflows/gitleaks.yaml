@@ -35,12 +35,12 @@ jobs:
       #     touch "$FILE_PATH"
       #     echo "File created at: $FILE_PATH"
 
-      # - name: Create empty tar file in workspace
-      #   run: |
-      #     FILE_PATH="$GITHUB_WORKSPACE/output.tar"
-      #     mkdir -p "$(dirname "$FILE_PATH")"
-      #     touch "$FILE_PATH"
-      #     echo "File created at: $FILE_PATH"
+      - name: Create empty tar file in workspace
+        run: |
+          FILE_PATH="$GITHUB_WORKSPACE/output.tar"
+          mkdir -p "$(dirname "$FILE_PATH")"
+          touch "$FILE_PATH"
+          echo "File created at: $FILE_PATH"
 
       - name: Gitleaks scan
         uses: cloudbees-io/gitleaks-github-test@v1
