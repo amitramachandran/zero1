@@ -16,9 +16,6 @@ jobs:
       - name: Print GITHUB_RUN_ID
         run: echo "Ref name is $GITHUB_RUN_ID"
 
-      - name: Mark repo as safe for git
-        run: git config --global --add safe.directory $GITHUB_WORKSPACE
-
       - name: Create request JSON file in workspace
         run: |
           FILE_PATH="$GITHUB_WORKSPACE/store/request/request.json"
