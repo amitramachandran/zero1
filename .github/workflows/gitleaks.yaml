@@ -23,10 +23,10 @@ jobs:
           touch "$FILE_PATH"
           echo "File created at: $FILE_PATH"
 
-      - name: Create tar of source code
-        run: |
-          tar -cvf output.tar .
-          tar -tf output.tar
+      # - name: Create tar of source code
+      #   run: |
+      #     tar -cvf output.tar .
+      #     tar -tf output.tar
 
       # - name: Create output JSON file in workspace
       #   run: |
